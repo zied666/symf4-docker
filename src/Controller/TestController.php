@@ -14,6 +14,13 @@ class TestController extends Controller
      */
     public function indexAction()
     {
+        $redis = $this->get('snc_redis.default');
+        //$redis->set('name',serialize(['name'=>'zied','email'=>'gmail']));
+        dump(unserialize($redis->get('name')));
+
+
+
+
         return $this->json("response");
     }
 }

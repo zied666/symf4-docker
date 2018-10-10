@@ -53,3 +53,8 @@ services:
         container_name: sf4_maildev
         ports:
           - 8001:80
+    redis:
+        image: redis:alpine
+        container_name: sf4_redis
+        ports:
+        - 6379:6379
