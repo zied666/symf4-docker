@@ -13,8 +13,11 @@ class HomepageService implements CacheableInterface
 
     public function getData():array
     {
+        $data = [];
         $this->getCache()->set('name',serialize(['name'=>'tttesstt']))  ;
-        $data = unserialize($this->getCache()->get('name'));
+        if($this->getCache()->has('name')) {
+            $data = unserialize($this->getCache()->get('name'));
+        }
 
         return $data;
     }
